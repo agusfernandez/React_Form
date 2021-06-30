@@ -6,7 +6,7 @@ import {useState} from "react";
 
 const UsersList = ({users}) => {
     console.log("lista de users" + users);
-    const [list, updateList]=useState({users});
+    const [list, updateList]=useState({});
     console.log("lista"+list);
     const removeUser=(e)=>{
         console.log("evento"+e);
@@ -40,8 +40,8 @@ const UsersList = ({users}) => {
                             <td>{id}</td>
                             <td>{name}</td>
                             <td>{age}</td>
-                            <td onClick={removeUser}>✏️</td>
-                            <td>❌  </td>
+                            <td >✏️</td>
+                            <td onClick={removeUser}>❌  </td>
 
                         </tr>
                         ))}
