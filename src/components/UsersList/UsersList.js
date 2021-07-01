@@ -4,12 +4,14 @@ import {Col, Table} from 'react-bootstrap';
 import {useState} from "react";
 
 
-const UsersList = ({users, deleteUser}) => {
-    
-    const removeUser=({users, deleteUser})=>{
-        console.log("esto es " +users +deleteUser);
-        return users;
-    }
+const UsersList = ({users}) => {
+    const[deleteuser, deleteUser]= useState(users);
+    // const handleDelete=(id)=>{
+    //     console.log(id)
+    //     deleteUser(id)
+    //     console.log("esto es  el id "+id);
+    // }
+  
   
     return(
         <>
@@ -31,9 +33,9 @@ const UsersList = ({users, deleteUser}) => {
                             <td>{id}</td>
                             <td>{name}</td>
                             <td>{age}</td>
-                            <td >✏️</td>
-                            <td onClick={removeUser}>❌  </td>
-
+                            <td>✏️</td>
+                            <td  onClick={() =>deleteUser((deleteuser) => deleteuser.filter((_, i) => i !== deleteuser.length - 1))}>❌  </td>
+                            
                         </tr>
                         ))}
                     </tbody>
